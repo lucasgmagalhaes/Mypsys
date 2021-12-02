@@ -1,0 +1,1 @@
+web: java -jar target/mp-app-1.jar
