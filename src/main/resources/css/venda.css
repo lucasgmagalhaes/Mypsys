@@ -1,0 +1,134 @@
+body {
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #E8F1F2;
+  display: grid;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/**********
+/** CORPO
+/**********/
+main {
+  display: grid;
+  margin-top: 15px;
+}
+
+main h3 {
+  text-align: center;
+}
+
+
+/*********
+/** BOX
+/*********/
+.box_descricao {
+  display: grid;
+  border: 0.6mm solid dimgray;
+  border-radius: 10px;
+  padding: 5px;
+  grid-template-columns: repeat(4,minmax(0, 1fr));
+  grid-template-areas: 
+  "b b b b"
+  "c c c c"
+  "d d d d"
+  "e e e e"
+  "f f g g";
+  grid-gap: 10px;
+  background-color: #E8F1F2;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*.box_descricao img {
+  grid-area: a;
+  max-width: 100%;
+  max-height: 300px;
+  border: thin solid black;
+}*/
+
+.box_descricao #valor {
+  grid-area: d;
+}
+
+.box_descricao #descricao {
+  grid-area: b;
+}
+
+.box_descricao #codigo {
+  grid-area: c;
+}
+
+.box_descricao .quantidade {
+  grid-area: e;
+}
+
+#mais, #menos {
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border: thin solid black;
+  border-radius: 30px;
+}
+
+#quantidade {
+  width: 50px;
+}
+
+#confirma, #cancela {
+  border-radius: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 10px;
+}
+
+.box_descricao #confirma {
+  grid-area: f;
+  background-color: #1B98E0;
+}
+
+.box_descricao #cancela {
+  grid-area: g;
+  background-color: #434343;
+}
+
+
+
+/***********
+/** PESQUISA
+/**********/
+main .pesquisa {
+  display: grid;
+  margin-top: 50px;
+  grid-template-columns: repeat(6,minmax(0,1fr));
+  grid-gap: 10px;
+}
+
+.pesquisa #campo_pesquisa {
+  grid-column: 1 / 6;
+}
+
+.resultados_pesquisa {
+  overflow: scroll;
+}
+
+.executa_pesquisa {
+  background-color: #434343;
+}
+
+/*****************
+/** MEDIA QUERIES
+/*****************/
+@media screen and (min-width: 700px) {
+
+  body {
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+}

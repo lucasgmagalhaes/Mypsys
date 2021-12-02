@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Cadastro</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src='../../js/fakedb_login.js'></script>
+</head>
+
+<body>
+ 
+    <!--Cabeçalho-->
+    <header>
+        <div class="container-flex">
+            <div class="container_menu">
+                <div class="row">
+                    <div class="col-3">
+                        <a href="../../html/mpsys/mpsys.html">
+                            <img src="../../img/logo.png" alt="logo" class="logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 info text-center lead">
+                    <i class="fas fa-address-card fa-lg bg-white"></i>
+                    <div class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4 text-white h3" id="taxa">
+                        Cadastro
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container shadow rounded">
+            <div class="row border-bottom" style="background-color: rgba(56, 118, 143, 0.267);">
+                <div class="col-12 text-justify-left">
+                    <form method="POST">
+                        <div class="row border-bottom rounded-pill shadow-sm mt-3 mb-2 mx-2 px-5">
+                            <div class="col-12 p-3 display-4 lead">
+                                Dados Pessoais
+                            </div>
+                            <div class="col-6 p-3">
+                                <label for="nome" class="lead font-weight-bold">Nome</label>
+                                <input type="text" class="form-control" placeholder="Ex.: Felipe Tadeu" id="nome">
+                            </div>
+                            <div class="col-6 p-3">
+                                <label for="username" class="lead font-weight-bold">Nome de Usuário</label>
+                                <input type="text" class="form-control" placeholder="Ex.: floptadeu" id="username">
+                            </div>
+                            <div class="col-6 p-3">
+                                <label for="nome" class="lead font-weight-bold">Email</label>
+                                <input type="email" class="form-control" placeholder="Ex.: felipe@MPSYS.com.br"
+                                    id="email">
+                            </div>
+                            <div class="col-6 p-3">
+                                <label for="username" class="lead font-weight-bold">Senha</label>
+                                <input type="password" class="form-control" id="senha">
+                                <small class="form-text text-muted">Deve ter entre X-XX caracteres, conter letras,
+                                    números e símbolos.</small>
+                            </div>
+                        </div>
+                        <div class="row border-bottom rounded-pill shadow-sm mt-3 mb-2 mx-2 px-5">
+                            <div class="col-12 p-3 display-4 lead">
+                                Dados Empresariais
+                            </div>
+                            <div class="col-6 p-3">
+                                <label for="empresa" class="lead font-weight-bold">Empresa</label>
+                                <input type="text" class="form-control" placeholder="Ex.: MPSYS"
+                                    id="empresa">
+                            </div>
+                            <div class="col-6 p-3">
+                                <label for="cnpj" class="lead font-weight-bold">CNPJ</label>
+                                <input type="text" class="form-control" placeholder="XX.XXX.XXX/XXXX-XX" id="cnpj">
+                            </div>
+                        </div>
+                        <div class="row border-bottom rounded-pill shadow-sm mt-3 mb-2 mx-2 px-5">
+                            <div class="col-12 text-center p-3">
+                                <button type="submit" class="btn btn-dark" id="registrar">Registrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        let registrar = document.getElementById('registrar');
+        if (localStorage.getItem('cadastro') === null) {
+            let value = {
+                "cadastro": [
+                    {
+
+                    }
+                ]
+            };
+            localStorage.setItem('cadastro',JSON.stringify(value));
+            console.log("A");
+        }
+
+        registrar.onclick = (e) => {
+
+            if (isAllInputsFilled()) {
+                incluirCadastro();
+                window.location.href = "../../html/login/login.html";
+            } else {
+                alert("PREENCHA TODOS OS DADOS ANTES DE CONTINUAR.");
+            }
+
+            e.preventDefault();
+
+            function incluirCadastro() {
+                // Ler os dados do localStorage
+                let objcadastro = leDados();
+                // Incluir um novo contato
+                let strNome = document.getElementById('nome').value;
+                let strUsername = document.getElementById('username').value;
+                let strEmail = document.getElementById('email').value;
+                let strSenha = document.getElementById('senha').value;
+                let strEmpresa = document.getElementById('empresa').value;
+                let strCNPJ = document.getElementById('cnpj').value;
+                let novoCad = {
+                    id: generateUUID(), //TEMPORARIO
+                    nome: strNome,
+                    username: strUsername,
+                    email: strEmail,
+                    senha: strSenha,
+                    empresa: strEmpresa,
+                    CNPJ: strCNPJ,
+                    taxa: 0 
+                };
+
+                if (emailExistente(novoCad)) {
+                    alert("Usuário já cadastrado!");
+                }
+                else {
+                    objcadastro.cadastro.push(novoCad);
+                    salvaDados(objcadastro);
+                    alert("Cadastro realizado com sucesso!");
+                }
+            }
+
+
+            // Checar se cadastro já existe
+            function emailExistente(novoCad) {
+                let usuarioJaExiste = false;
+                let objUsuarios = JSON.parse(localStorage.getItem('cadastro')).cadastro;
+                let i = 0;
+                while (i < objUsuarios.length && !usuarioJaExiste) {
+                    console.log(objUsuarios[i].email);
+                    console.log(novoCad.email);
+                    if (objUsuarios[i].email == novoCad.email) {
+                        usuarioJaExiste = true;
+                    }
+                    i++;
+                }
+                return usuarioJaExiste;
+            }
+            
+
+            // Salvar os dados no localStorage
+            function salvaDados(dados) {
+               localStorage.setItem('cadastro', JSON.stringify(dados));
+            }
+            
+
+            // le dados do localStorage
+            function leDados() {
+                let strDados = localStorage.getItem('cadastro');
+                let objDados = {};
+                if (strDados) {
+                    objDados = JSON.parse(strDados);
+                }
+                else{
+                   objDados = { 
+                        cadastro : [
+                          {
+                                id : 1,
+                                email: 'mpsys@gmail.com',
+                                senha: '1234',
+                                username: 'MPSYS',
+                                nome: 'Grupo TI',
+                                CNPJ: '12345678901234',
+                                empresa: 'MPSYS',
+                                taxa: 50.0
+                            },
+                            {
+                                id: 2,
+                                email: 'cliente@gmail.com',
+                                senha: '1234',
+                                username: 'cliente',
+                                nome: 'Cliente Fulano',
+                                CNPJ: '00000000000000',
+                                empresa: 'Cliente Inc.',
+                                taxa: 25.0
+                            }
+                        ]
+                    };
+                }
+                return objDados; 
+            }
+
+
+            // checa se todos os campos foram preenchidos
+            function isAllInputsFilled() {
+                if (isEmpty('nome') || isEmpty('username') || isEmpty('email') || isEmpty('senha') || isEmpty(
+                        'empresa') || isEmpty('cnpj')) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
+
+            // checa se o campo está vazio
+            function isEmpty(item) {
+                if (document.getElementById(item).value == undefined || document.getElementById(item).value == "" ||
+                    document.getElementById(item).length == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+
+            // função para gerar códigos randômicos a serem utilizados como código de usuário
+            // Fonte: https://stackoverflow.com/questions/105034/how-to-create-guid-uuid
+            function generateUUID() { // Public Domain/MIT
+                var d = new Date().getTime();//Timestamp
+                var d2 = (performance && performance.now && (performance.now() * 1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                    var r = Math.random() * 16;//random number between 0 and 16
+                    if (d > 0) {//Use timestamp until depleted
+                        r = (d + r) % 16 | 0;
+                        d = Math.floor(d / 16);
+                    } else {//Use microseconds since page-load if supported
+                        r = (d2 + r) % 16 | 0;
+                        d2 = Math.floor(d2 / 16);
+                    }
+                    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+                });
+            }
+        };
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a3121dc2ca.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

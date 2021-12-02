@@ -1,0 +1,155 @@
+/*************
+/** CABEÇALHO
+/*************/
+.cabecalho-desktop {
+  display: none; /* esconder cabeçalho para telas maiores */
+}
+header { /* grid para logo, botão do menu e barra colorida */
+  display: grid; 
+  height: auto;
+  grid-template-areas: 
+  "a a b b b c"
+  "d d d d d d";
+  /* 
+      a= logo
+      b= vazio
+      c= #menu
+      d= .dados (tarja colorida) 
+  */
+}
+
+.logo {
+  height: auto;
+  grid-area: a; /* dentro de header */
+}
+
+.logo .imagem_logo {
+  max-height: 30px; /* altura máxima do logo */
+}
+
+#menu { /* área do botão do menu */
+  grid-area: c; /* dentro de header */
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: rgb(63,160,255);
+  
+}
+
+
+/******************
+/** NAV LATERAL
+/******************/
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0; /* Stay at the right */
+  background: rgb(63,160,255);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.2s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.accordion a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: medium;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.accordion a:hover {
+  color: BLACK;
+  background-color: rgb(128, 191, 255);
+}
+
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+/******************
+/** TARJA COLORIDA
+/******************/
+.dados {
+  grid-area: d; /* grid-area de header */
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(6,minmax(0, 1fr));
+  grid-template-areas: 
+  "a a b b c c";
+  /*
+    a= .dados .usuario
+    b= .dados .empresa
+    c= .dados .taxa
+  */
+  text-align: center;  
+  background: rgb(63,160,255);
+  min-height: 50px;
+  border-radius: 10px;
+}
+
+.usuario, .empresa, .taxa{
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 5px;
+  font-size: small;
+}
+.dados .usuario {
+  grid-area: a;
+}
+
+.dados .empresa {
+  grid-area: b;
+}
+
+.dados .taxa {
+  grid-area: c;
+}
+
+
+
+/*****************
+/** TELAS MAIORES
+/*****************/
+@media screen and (min-width: 700px) {
+  
+  /*************
+  /** CABEÇALHO
+  /*************/
+  #menu {
+    display: none;
+  }
+  .container_naveg a {
+    color: rgb(63, 63, 189);
+  }
+  .cabecalho-desktop {
+    display: grid;
+    grid-column: span 4;
+  }
+  .cabecalho-desktop .container_menu {
+    width: 100%;
+  }
+  .cabecalho-desktop a{
+    padding-bottom: 0;
+  }
+}

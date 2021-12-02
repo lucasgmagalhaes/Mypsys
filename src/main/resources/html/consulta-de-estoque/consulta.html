@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Consulta de produtos</title>
+
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/consulta.css">
+
+    <!-- scripts para carregar cabeçalho de "standAloneHeader.html" em "header"-->
+    <link rel="stylesheet" href="../../css/standAloneHeader.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#standAloneHeader_V2").load("../../html/standaloneHeader.html/standAloneHeaderV2.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Modais -->
+    <div id="modais"></div>
+
+    <!--Cabeçalho-->
+    <header id="standAloneHeader_V2"></header>
+
+
+
+    <main class="container consultaFuck">
+        <div class="row">
+            <div class="col-12">
+                <h2>Consulta</h2>
+                <div class="form-row">
+                    <div class="form-group col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 barraPesquisa">
+                        <div class="input-group">
+
+                            <input type="text" class="form-control" id="consulta">
+                            <div class="input-group-append">
+                                <select class="btn btn-secondary botaoConsulta" id="pesquisa">
+                                    <option value="0" selected>
+                                        Pesquisar por
+                                    </option>
+                                    <option value="descricao">Descrição</option>
+                                    <option value="codigo">Código</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-5">
+                        <button class="btn btn-primary" onclick="consultarEstoque()" id="btnConsultar" type="submit">Consultar no Estoque</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 align-items-center text-center">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="row border-bottom border-thicker border-dark">
+                                    <div class="col-12 col-xl-2 col-lg-2 col-md-12 col-sm-12 h5">
+                                        <div class="font-weight-bold badge badge-dark codigo">    
+                                            Código
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-xl-5 col-lg-5 col-md-12 col-sm-12 h5 ">
+                                        <div class="h4 border rounded-pill border-color-mpsys"> 
+                                            Descrição
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-xl-3 col-lg-3 col-md-12 col-sm-12 h5 border border-thicker rounded border-secondary">
+                                        Informações
+                                    </div>
+                                    <div class="col-12 col-xl-2 col-lg-2 col-md-12 col-sm-12 h5">
+                                       <div class="d-inline %estoque">% no Estoque</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="lista">
+
+
+
+
+
+                                <!-- <table class="table table-responsive table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Descrição</th>
+                                        <th scope="col">Quantidade</th>
+                                        <th scope="col">Valor Aq.</th>
+                                        <th scope="col">Categoria</th>
+                                        <th scope="col">Armazém</th>
+                                        <th scope="col">Estante</th>
+                                        <th scope="col">Prateleira</th>
+                                        <th scope="col">Posição</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="corpoTabela">
+
+                                </tbody>
+                            </table> -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-2 bg-light">
+                <h3>Filtro</h3>
+                <h5>Quantidade</h5>
+                <div id="1">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label for="" class="form-check-label"></label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label for="" class="form-check-label"></label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input">
+                        <label for="" class="form-check-label"></label>
+                    </div>
+                </div>
+                <h5>Valor Aq.</h5>
+                <div id="2">
+
+                </div>
+                <h5>Categoria</h5>
+                <div id="3">
+
+                </div>
+                <h5>Armazém</h5>
+                <div id="4">
+
+                </div>
+                <h5>Estante</h5>
+                <div id="5">
+
+                </div>
+                <h5>Prateleira</h5>
+                <div id="5">
+
+                </div>
+                <h5>Posição</h5>
+                <div id="6">
+
+                </div>
+            </div> -->
+            </div>
+
+    </main>
+
+    <script src="../../js/consulta.js"></script>
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a3121dc2ca.js" crossorigin="anonymous"></script>
+
+    <script>
+        function consultarEstoque(){
+          const descricao = document.getElementById("descricao").value;
+          const dataValidade = document.getElementById("validade").value;
+          const dataAquisicao = document.getElementById("aquisicao").value;
+          const categoria = document.getElementById("categoria").value;
+          const quantidade = document.getElementById("quantidade").value;
+          const valorCompra = document.getElementById("valorCompra").value;
+          const valorVenda = document.getElementById("valorVenda").value;
+          const cnpjFornecedor = document.getElementById("cnpj_fornecedor").value;
+    
+          $.ajax({
+            url: 'http://localhost:4567/item',
+            method: 'GET',
+            dataType: "json",
+          }).done((data) => {
+            console.log(data)
+            return data;
+          });
+    
+          /*
+          window.onload = () => {
+  $.ajax({
+    url: "http://localhost:6789/livro",
+    type: "GET",
+    dataType: "json",
+  }).done(function (data) {
+    createBookInCatalog(data);
+  });
+};
+*/
+          console.log(descricao);
+        }
+      </script> 
+
+</body>
+
+</html>

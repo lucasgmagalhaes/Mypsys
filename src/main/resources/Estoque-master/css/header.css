@@ -1,0 +1,27 @@
+.info {
+    background: rgb(63,160,255);
+    background: radial-gradient(circle, rgba(63,160,255,1) 0%, rgba(96,158,255,1) 0%, rgba(194,139,236,1) 100%);
+    margin: 10px 0px!important;
+    width: 80%;
+}
+.navegador{
+    margin-bottom: 1%;
+    margin-top: 3%;
+}
+.logo{
+    padding-left: 20%;
+    margin-top: 5%;
+    width: 75%;
+    
+}
+
+@media (max-width:981px){
+
+    .navegador{
+        margin-bottom: 2em;
+        margin-left: 19.5%;
+    }
+    .logo{
+        margin-left: 6%;
+    }
+}

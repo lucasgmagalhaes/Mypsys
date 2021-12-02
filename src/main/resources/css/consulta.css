@@ -1,0 +1,50 @@
+body {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #E8F1F2;
+}
+
+.consultaFuck h1{
+    font-size: 250%;    
+}
+
+h2{
+    margin: 20px;
+}
+
+.border-color-mpsys {
+    border: 5px solid transparent!important;
+    padding: .5rem;
+
+    /* https://dev.to/rumansaleem/gradient-borders-with-css-3mnk */ 
+    background: 
+        linear-gradient(to right, white, white), 
+        radial-gradient(circle, rgba(63,160,255,1) 0%, rgba(96,158,255,1) 0%, rgba(194,139,236,1) 100%); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+
+}
+
+.codigo {
+    font-size: 1.25rem!important;
+}
+
+.border-thicker {
+    border-width: 3px!important;
+}
+
+.%estoque{
+    
+}
+
+@media (max-width: 800px) {
+
+    .menuFrances .h5{
+        font-size: 0px;
+        padding: 0px;
+        margin: 0px;
+        
+    }
+
+    
+}

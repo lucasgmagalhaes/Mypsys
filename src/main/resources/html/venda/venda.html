@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Vender Produtos</title>
+
+  <!-- CSS Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/venda.css">
+  
+  <!-- script para carregar cabeçalho de "standAloneHeader.html" em "header"-->
+  <link rel="stylesheet" href="../../css/standAloneHeader.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script> 
+    $(function(){
+      $("#standAloneHeader_V2").load("../../html/standaloneHeader.html/standAloneHeaderV2.html"); 
+    });
+  </script>
+
+</head>
+
+<body>
+  
+  <header id="standAloneHeader_V2"></header>
+
+  <main>
+    <h3 class="titulo">Vendas</h3> <!-- Título -->
+    
+    <!-- Caixa com os dados do produto selecionado -->
+    <!-- Dados preenchidos com venda.js -->
+    <div class="box_descricao col-sm-2">
+      <!-- Removido imagem temporariamente fake do produto -->
+      <!-- <img src="https://picsum.photos/200" alt="foto-produto" id="foto-produto"> -->
+      <span id="valor"> <!-- valor do produto -->
+        <strong>Valor unitário: </strong>
+        <span id="valor"></span> <!-- valor preenchido pelo js -->
+      </span>
+      <span id="descricao"> <!-- descrição do produto -->
+        <strong>Descrição: </strong> <!-- valor preenchido pelo js -->
+      </span>
+      <span id="codigo"> <!-- código do produto -->
+        <strong>Código: </strong> <!-- valor preenchido pelo js -->
+      </span>
+      <div class="quantidade"> <!-- quantidade a ser vendida -->
+        <strong>Quantidade:</strong>
+        <input id="quantidade" value="0"> <!-- campo para alterar qtd a ser vendida -->
+        <button class="btn btn-light" id="mais"> <!-- botão "+" para alterar quantidade -->
+          <i class="fas fa-plus"></i> <!-- https://fontawesome.com/icons/plus?style=solid -->
+        </button> 
+        <button class="btn btn-light" id="menos"> <!-- botão "-" para alterar quantidade -->
+          <i class="fas fa-minus"></i> <!-- https://fontawesome.com/icons/minus?style=solid -->
+        </button> 
+      </div>
+      <!-- Botões confirma venda e limpa ou cancela -->
+      <button class="btn btn-success confirma" onclick="confirmaVenda()" id="confirma"><i class="fas fa-check"></i></button>
+      <button class="btn btn-secondary cancela" id="cancela"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="pesquisa">
+      <!-- campo para inserir pesquisa, exibe resultados a cada tecla pressionada -->
+      <input oninput="pesquisarProdutos()" class="form-control" type="search" id="campo_pesquisa" placeholder="Pesquisar...">
+      <button class="btn btn-secondary executa_pesquisa"> <!-- botão executar pesquisa -->
+        <i class="fas fa-search"></i> <!-- https://fontawesome.com/icons/search?style=solid -->
+      </button>
+    </div>
+    <!-- tabela de resultados da pesquisa -->
+    <div class="resultados_pesquisa">
+      <!-- https://getbootstrap.com/docs/4.5/content/tables/#hoverable-rows -->
+      <table class="table table-responsive table-hover">
+        <thead> <!-- cabeçalho da tabela -->
+          <tr> <!-- uma linha -->
+            <th scope="col">Id</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Data de aquisição</th>
+            <th scope="col">Data de validade</th>
+            <th scope="col">Lote</th>
+            <th scope="col">Valor de Compra</th>
+            <th scope="col">Valor de Venda</th>
+            <th scope="col">Fornecedor</th>
+            
+            <!--
+            <th scope="col">Estante</th>
+            <th scope="col">Prateleira</th>
+            <th scope="col">Posição</th>
+            -->
+          </tr>
+        </thead>
+        <tbody id="corpoTabela"></tbody> <!-- preenchido por venda.js -->
+      </table>
+    </div>
+  </main>
+  <!-- bootstrap sem a linha do jquery -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a3121dc2ca.js" crossorigin="anonymous"></script>
+  <!-- manipulação de dados -->
+  <script src='../../js/venda.js'></script>
+  <!-- menu lateral -->
+
+  <script>
+    function confirmaVenda(){
+
+      const descricao = document.getElementById("descricao").value;
+      const quantidade = document.getElementById("quantidade").value;
+      const valorVenda = document.getElementById("valorVenda").value;
+
+      $.ajax({
+        url: 'http://localhost:4567/item',
+        method: 'POST',
+        data: {
+          descricao,   
+          dataValidade, 
+          dataAquisicao,
+          categoria,
+          quantidade,
+          valorCompra,
+          valorVenda,
+          cnpjFornecedor,
+        }
+      }).done((data) => {
+        console.log(data)
+      });
+      console.log(descricao);
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>User Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="../../css/user.css">
+    
+        <!-- scripts para carregar cabeçalho de "standAloneHeader.html" em "header"-->
+        <link rel="stylesheet" href="../../css/standAloneHeader.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script> 
+            $(function(){
+            $("#standAloneHeader_V2").load("../../html/standaloneHeader.html/standAloneHeaderV2.html"); 
+            });
+            $(function() {
+            var dados = JSON.parse(localStorage.getItem('dados'));
+
+            var username = dados.username;
+            var empresa = dados.empresa;
+            var taxa = dados.taxa;
+
+            console.log(username);
+            console.log(empresa);
+            console.log(taxa);
+            
+
+            document.getElementById('username').innerHTML = `<i class="far fa-user"></i> ${username}`;
+            document.getElementById('empresa').innerHTML = `<i class="fas fa-briefcase"></i> ${empresa}`;
+            document.getElementById('taxa').innerHTML = `<i class="fas fa-percent"></i> ${taxa}`;
+            document.getElementById('escolaridade').innerHTML = `${escolaridade}`;
+
+            })
+        </script>
+</head>
+<body>
+    <!-- Modais -->
+    <div id="modais"></div>
+
+    <!--Cabeçalho-->
+    <header id="standAloneHeader_V2"></header>
+    <main>
+        <div class="container menuUsuario">
+            <div class="row">
+                <div class="col-4">
+                    <br>
+                    <div class="card" style="width: 18rem;">
+                        
+                        <img src="../../img/User1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Ola Paolinelli</h5>
+                          <p class="card-text">Organize sua pagina de maneira eficiente e facil com o sistema da MPSYS.</p>
+                          <a href="#" class="btn btn-primary">Editar perfil</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <form class="box">
+                        
+                        <br><h3>Minha pagina</h3><br>
+                        
+                        <h4>Minhas informacoes</h4><br>
+                        
+                        <h6 id="username">Nome:</h6>
+                        <h6 id="empresa">Empresa:</h6>
+                        <h6 class="fas fa-university">Formacao: 2 grau completo</h6>
+                        <h6>Areas de interesse: Ciencia da computacao, programacao, etc</h6>
+
+                        <h5>Estatisticas:</h5>
+                        <h6>Numero de acesso</h6>
+                        <h6>Ultimo acesso</h6>
+                        <h6>Artefatos utilizados: </h6>
+                    </form>    
+                </div>
+                <div class="col-4">
+                    <br>
+                    <h4>Notificacoes</h4>
+                    <table style="padding: 20px;">
+                        <tr style="padding-right: 5px;">
+                            <th style="padding-right: 10px;">Produto</th>
+                            <th style="padding-right: 5px;">Quantidade</th>
+                            <th>Validade</th>
+                        </tr>
+                        <tr>
+                            <td>Ruffles</td>
+                            <td>50%</td>
+                            <td>5 dias</td>
+                        </tr>
+                        <tr>
+                            <td>Picanha</td>
+                            <td>25%</td>
+                            <td>2 dias</td>
+                        </tr>
+                        <tr>
+                            <td>Cafe</td>
+                            <td>90%</td>
+                            <td>1 dia</td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <h5>Relatorio diario</h5>
+                    <table>
+                        <tr>
+                            <th style="padding-right: 5px;">Saldo antigo</th>
+                            <th style="padding-right: 5px;">Saldo atual</th>
+                            <th style="padding-right: 5px;">Produtos vendidos</th>
+                        </tr>
+                        <tr>
+                            <td>500$</td>
+                            <td>1500$</td>
+                            <td>50 unid</td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <h5>Completar registro</h5>
+                    <table>
+                       <tr>
+                           <th>Pendencias</th>
+                       </tr>
+                       <tr>
+                           <td>Faculdade</td>
+                           <td style="padding-right: 5px;">Foto ID</td>
+                           <td>WebSite</td>
+                       </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+     <!-- Bootstrap JS -->
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+     </script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+     </script>
+     <!-- Font Awesome -->
+     <script src="https://kit.fontawesome.com/a3121dc2ca.js" crossorigin="anonymous"></script>
+     <!--User Page-->
+     <script src="user.js"></script>
+</body>
+</html>

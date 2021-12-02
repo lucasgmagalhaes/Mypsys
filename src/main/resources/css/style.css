@@ -1,0 +1,988 @@
+svg{
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+}
+.container_header 
+{
+    
+    padding-left: 3em;
+    background-color: rgb(74, 115, 175);
+}
+.container_header a
+{
+    color: rgb(238, 240, 239);
+}
+.container_header .pace2
+{
+    padding-left: 10px;
+   
+   
+}
+.container_header .pace2 a
+{
+    color: rgb(255, 255, 255);
+    padding-right: 80px;
+}
+.telefone{
+    display: none;
+}
+.logo
+{
+    margin-left:3em;
+    padding: 20px;
+    width: 18em;
+    
+}
+.container_naveg 
+{
+    
+    font-size: 22px;
+    font-weight: 650;
+    padding: 20px;
+    color: #f0000000;
+}
+.container_naveg a
+{
+    padding-top: 2.2em;
+    padding-right: 2rem;
+    color: rgb(63, 63, 189);
+}
+.banner img
+{
+    position: absolute;
+    top: 1;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+.conteudo p
+{
+    
+    margin-top: 2em;
+    position: relative;
+    max-width: 750px;
+    text-align: left;
+    color: #fff;
+    font-size: 17px;
+}
+.conteudo h2
+{
+    padding-top: 1.5em;
+    max-width: 800px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.945);
+    font-size: 27px;
+    font-weight: 800;
+}
+.conteudo h2 .gratis
+{
+    color:rgb(80, 8, 99);
+}
+.conteudo button
+{
+    border-radius: 1em;
+    border-width: 8px;
+    border-color: rgb(30, 112, 180);
+    margin-top: 1em;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    
+}
+.conteudo a button
+{
+    color: rgba(76, 6, 134, 0.986);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.container_intro .introducao
+{
+    
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 8em;
+    padding-bottom: 1em;
+}
+.offer
+{
+    margin-left: 5em;
+    margin-right: 5em;
+    padding-left: 4em;
+}
+.offer .card
+{
+    background-color: rgb(255, 255, 255);
+    
+}
+.offer .card-body h3
+{
+    justify-content: left;
+    text-align: left;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+@media (min-width: 1200px) 
+{
+    .container-menu img.logo{
+        padding-left: 0px;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .logo
+    {
+    margin-top: 0.5rem;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-left:9em;
+    padding: 15px;
+    width: 13em;
+    padding-left: 4px;
+    }
+    .container_naveg 
+    {
+    
+        font-size: 15px;
+        font-weight: 700;
+        padding: 0px;
+        padding-left: 0em;
+        margin-right: 6rem;
+        padding-top: 0.5rem;
+        padding-bottom: 20px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: #1dc9e7d8;
+    }
+    .conteudo
+    {
+        
+        padding-top: 5em;
+    }
+    .conteudo h2
+    {
+        padding-top: 1.1em;
+        max-width: 800px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 23px;
+        font-weight: 8800;
+
+        padding-right: 140px;
+    }
+    .container_intro .introducao
+    {
+        
+        padding-top: 4em;
+        font-weight: 550;
+    }
+    .container_header .pace2 a
+    {
+        color: rgb(252, 252, 252);
+        padding-left: 13em;
+        padding-right: 5em;
+    }
+    .conteudo button
+    { 
+        border-radius: 1.5em;
+        border-width: 3px;
+        border-color: rgb(30, 112, 180);
+        margin-top: 2em;
+        padding-right: 3rem;
+        padding-left: 3rem;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        ;
+    }   
+    .conteudo button:hover{
+        color: rgb(31, 9, 236);
+    }
+}
+
+@media (width: 450px)
+{
+    .logo
+    {
+    margin-left:9em;
+    padding: 15px;
+    width: 13em;
+    padding-left: 4px;
+
+    
+    }
+    svg{
+       
+        font-size: 3px;
+        height: 8em;
+        overflow: visible;
+        vertical-align: -.125em;
+        margin: 0px;
+        margin-left: 10em;
+    }
+    
+    .container_naveg 
+    {
+    
+        font-size: 14px;
+        font-weight: 700;
+        padding: 0px;
+        padding-left: 3.2em;
+        color: #1dc9e7d8;
+    }
+    .conteudo
+    {
+        padding-top: 2.1em;
+        padding-right: 5em;
+    }
+    .conteudo h2
+    { 
+
+        padding-top: 1.7em;
+        max-width: 280px;
+        text-align: left;
+        color: rgba(253, 244, 244, 0.945);
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .conteudo p
+    { 
+
+        
+        max-width: 250px;
+        text-align: left;
+        color: rgba(253, 244, 244, 0.945);
+        font-size: 15px;
+        
+    }
+    .conteudo button
+    { 
+        border-radius: 1em;
+        border-width: 3px;
+        border-color: rgb(30, 112, 180);
+        margin-top: 2em;
+        padding-right: 3rem;
+        padding-left: 3rem;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        ;
+    }   
+        
+    .container_intro .introducao
+    {
+        font-weight: 450;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        padding-left: 3em;
+        padding-right: 3em;
+        padding-top: 7em;
+        padding-bottom: 1em;
+        padding-top: 14em;
+        font-size: 15px;
+        
+    }
+    .container_header .pace2 a
+    {
+        color: rgb(43, 16, 75);
+        
+        display: none;
+        font-size: 15px;
+        
+    }
+        
+    .pace2 .eMail
+    {
+        padding-right: 20em;
+        
+            
+    }
+}
+
+@media (width: 360px)
+{
+    .logo
+    {
+        margin-left:6em;
+        padding: 15px;
+        width: 50%;
+        padding-left: 4px;
+    }
+    .container_header{
+        padding: 0px;
+    }
+    svg{
+        padding: 0;
+        font-size: 5px;
+        height: 3em;
+        overflow: visible;
+        vertical-align: -.125em;
+        padding-left: 2em;
+        justify-items: center;
+        
+        
+    }
+
+    .equipe{
+        display: none;
+    }
+    .container_naveg 
+    {
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 12px;
+        margin-left: 2rem;
+       
+    }
+    .container_naveg .parceiro{ 
+        display: none;
+    }
+    
+    .conteudo h2
+    { 
+
+        padding-top: 4em;
+        max-width: 210px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .conteudo p
+    { 
+
+        padding-bottom: 3em;
+        max-width: 100px;
+        text-align: left;
+        color: rgba(5, 5, 4, 0.945);
+        font-size: 0.7rem;
+        font-weight: 450;
+    }
+    .conteudo button
+    { 
+        border-radius: 2rem;
+        border-width: 2px;
+        border-color: rgb(30, 112, 180);
+        margin-top: 1em;
+        padding-right:0.4em;
+        padding-left: 0.4em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        
+        
+        
+    } 
+    .conteudo button a button
+    {
+        color: rgba(76, 6, 134, 0.986);
+        font-weight: 500;
+        font-size: 0.1rem;
+        
+    }  
+        
+    .container_intro .introducao
+    {
+        font-weight: 550;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 3rem;
+        padding-bottom: 1em;
+        
+        font-size: 12px;
+        
+    }
+    .container_header .pace2 
+    {
+    
+        display: none;
+    }
+    
+    .banner img
+    {
+        position: absolute;
+        top: 1;
+        left: 1;
+        right: 10;
+        width: 100%;
+        height: 55%;
+        object-fit: cover;
+        opacity: 1;
+    }
+}
+@media  (width: 411px)
+{   
+    .telefone{
+        display: none;
+    }
+    .logo
+    {
+        margin-left:7em;
+        padding: 15px;
+        width: 50%;
+        
+    }
+    .container_naveg 
+    {
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 12px;
+        padding-left: 4rem;
+       
+    }
+
+    .parceiro{
+        display: none;
+    }
+    .equipe{
+        display: none;
+    }
+    .conteudo h2
+    { 
+
+        padding-top: 4em;
+        max-width: 250px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .conteudo p
+    { 
+
+        padding-bottom: 3em;
+        max-width: 80px;
+        text-align: left;
+        color: rgba(245, 245, 245, 0.945);
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .conteudo button {
+        border-radius: 5rem;
+        border-width: 4px;
+        border-color: rgb(30, 112, 180);
+        margin-top: 1em;
+        padding-right:0.4em;
+        padding-left: 0.4em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+    }
+    .conteudo button a {
+    font-size: 20%;
+    }
+    
+    
+
+}
+@media (width: 320px)
+{
+    .container_header{
+        padding: 0%;
+    }
+    .telefone{
+        display: none;
+    }
+    .logo
+    {
+        margin-left:5em;
+        padding: 15px;
+        width: 50%;
+        
+    }
+    .conteudo h2
+    { 
+
+        padding-top: 2rem;
+        max-width: 150px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .conteudo p
+    { 
+
+        padding-bottom: 3em;
+        max-width: 5rem;
+        text-align: left;
+        color: rgba(245, 245, 245, 0.945);
+        font-size: 11px;
+        font-weight: 400;
+    }
+    .container_naveg .parceiro{
+        display: none;
+    }
+    .equipe{
+        display: none;
+    }
+    .container_naveg 
+    {
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 8px;
+        margin-left: 1rem;
+       
+    }
+
+    .conteudo button
+    {
+        
+        border-radius: 5rem;
+        border-width: 4px;
+        border-color: rgb(30, 112, 180);
+        margin-top: 1em;
+        padding-right:0.4em;
+        padding-left: 0.4em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        margin-left: 0px;
+        margin-right:100px ;
+        
+    } 
+    .conteudo button a button
+    {
+        color: rgba(76, 6, 134, 0.986);
+        font-weight: 200;
+        font-size: 0.05rem;
+        margin-left: 0px;
+        
+    }  
+    .container_intro .introducao{
+        padding-top: 2%;
+    }
+    .introducao{
+        
+        padding: 200px 200px;
+
+    }
+}
+@media (width: 375px)
+{
+    .container_header{
+        padding: 0%;
+    }
+    .telefone{
+        display: none;
+    }
+    .logo
+    {
+        margin-left:5em;
+        padding: 15px;
+        width: 50%;
+        
+    }
+    .conteudo h2
+    { 
+
+        padding-top: 2rem;
+        max-width: 150px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .conteudo p
+    { 
+
+        padding-bottom: 3em;
+        max-width: 5rem;
+        text-align: left;
+        color: rgba(245, 245, 245, 0.945);
+        font-size: 11px;
+        font-weight: 400;
+    }
+    .container_naveg .parceiro{
+        display: none;
+    }
+    .container_naveg    
+    {
+        
+        font-size: 12px;
+        font-weight: 700;
+        padding: 12px;
+        margin-left: 2rem;
+       
+    }
+    .equipe{
+        display: none;
+    }
+
+    .conteudo button
+    {
+        border-radius: 5rem;
+        border-width: 4px;
+        border-color: rgb(30, 112, 180);
+        margin-top: 1em;
+        padding-right:0.4em;
+        padding-left: 0.4em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        
+    } 
+    .conteudo button a button
+    {
+        color: rgba(76, 6, 134, 0.986);
+        font-weight: 200;
+        font-size: 0.05rem;
+        
+    }  
+    .container_intro .introducao{
+        padding-top: 3px;
+        margin-top: 0px;
+    }
+    .container_intro{
+        
+        padding-top: 3em;
+
+    }
+ }
+
+ @media (width: 414px){
+    .container_header{
+        padding: 0%;
+    }
+    .telefone{
+        display: none;
+    }
+    .logo
+    {
+        margin-left:5em;
+        padding: 15px;
+        width: 50%;
+        
+    }
+    .conteudo h2
+    { 
+
+        padding-top: 4rem;
+        max-width: 235px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .conteudo p
+    { 
+
+        padding-bottom: 3em;
+        max-width: 5rem;
+        text-align: left;
+        color: rgba(245, 245, 245, 0.945);
+        font-size: 11px;
+        font-weight: 400;
+    }
+    .container_naveg .parceiro{
+        display: none;
+    }
+    .container_naveg    
+    {
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 12px;
+        padding-left: 0.5em;
+        margin-left: 3rem;
+       
+    }
+    .equipe{
+        display: none;
+    }
+
+    .conteudo button
+    {
+        border-radius: 5rem;
+        border-width: 4px;
+        border-color: rgb(30, 112, 180);
+        margin-top: 1em;
+        padding-right:0.4em;
+        padding-left: 0.4em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        
+    } 
+    .conteudo button a button
+    {
+        color: rgba(76, 6, 134, 0.986);
+        font-weight: 200;
+        font-size: 0.05rem;
+        
+    }  
+    .container_intro .introducao{
+        padding-top: 5rem;
+    }
+    .container_intro{
+        
+        padding-top: 4em;
+
+    }
+ }
+ @media (width: 375px){
+    .container_header{
+        padding: 0%;
+    }
+    .telefone{
+        display: none;
+    }
+    .logo
+    {
+        margin-left:5em;
+        padding: 15px;
+        width: 50%;
+        
+    }
+    .conteudo h2
+    { 
+
+        padding-top: 5.5rem;
+        max-width: 235px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .conteudo p
+    { 
+
+        padding-bottom: 3em;
+        max-width: 5rem;
+        text-align: left;
+        color: rgba(245, 245, 245, 0.945);
+        font-size: 11px;
+        font-weight: 400;
+    }
+    .container_naveg .parceiro{
+        display: none;
+    }
+    .container_naveg    
+    {
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 12px;
+        padding-left: 0.5em;
+       
+    }
+
+    .conteudo button
+    {
+        border-radius: 5rem;
+        border-width: 4px;
+        border-color: rgb(30, 112, 180);
+        margin-top: 1em;
+        padding-right:0.4em;
+        padding-left: 0.4em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        
+    } 
+    .conteudo button a button
+    {
+        color: rgba(76, 6, 134, 0.986);
+        font-weight: 200;
+        font-size: 0.05rem;
+        
+    }  
+    .container_intro .introducao{
+        padding-top: 6rem;
+    }
+    .container_intro{
+        
+        padding-top: 6em;
+
+    }
+ }
+ @media (width: 768px){
+    .container_header svg{
+        padding-top: 0px;
+        justify-content: center;
+        margin-left: 85px;
+    }
+    .telefone{
+        display: none;
+    }
+    .logo
+    {
+        margin-left:2em;
+        padding-top: 15px;
+        width: 120%;
+        
+    }
+    .conteudo h2
+    { 
+
+        padding-top: 5.5rem;
+        max-width: 450px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 25px;
+        font-weight: 700;
+    }
+    .conteudo p
+    { 
+
+        padding-bottom: 1em;
+        max-width: 20rem;
+        text-align: left;
+        color: rgba(245, 245, 245, 0.945);
+        font-size: 15px;
+        font-weight: 400;
+    }
+    .container_naveg .parceiro{
+        display: block;
+    }
+    .container_naveg    
+    {
+        justify-content: right;
+        font-size: 15px;
+        font-weight: 700;
+        padding-top: 180em;
+        padding: 0px;
+        margin-left: 5em;
+        padding-left: 0.0em;
+       
+    }
+
+    .conteudo button
+    {
+        border-radius: 100rem;
+        border-width: 0.2rem;
+        border-color: rgb(30, 112, 180);
+        margin-top: 1em;
+        padding-right:0.7em;
+        padding-left: 0.7em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        
+    } 
+    .conteudo button a 
+    {
+        color: rgba(76, 6, 134, 0.986);
+        font-weight: 200;
+        font-size: 10rem;
+        
+    }  
+    .container_intro .introducao{
+        padding-top: 14em;
+    }
+    .container_intro{
+        
+        padding-top: 1em;
+
+    }
+    .container-menu img.logo{
+        padding-left: 0px;
+        padding: 0px;
+        margin: 0px;
+    }
+    .container_naveg .parceiro{
+        display: none;
+    }
+ }
+ @media(max-width: 1440px){
+    .logo
+    {
+        margin-left:1em;
+        padding-top: 12px;
+        width: 100%;
+      
+ }   
+ @media (width: 1024px)
+ {
+    .container_header svg{
+        padding-top: 0px;
+        
+        margin-left: 8rem;
+    }
+    .telefone{
+        display: none;
+    }
+    .logo
+    {
+        margin-left:5em;
+        padding-top: 12px;
+        width: 100%;
+        
+    }
+    .conteudo h2
+    { 
+
+        padding-top:9.5rem;
+        max-width: 560px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.945);
+        font-size: 1.8em;
+        font-weight: 700;
+    }
+    .conteudo p
+    { 
+
+        padding-bottom: 1em;
+        max-width: 23rem;
+        text-align: left;
+        color: rgba(245, 245, 245, 0.945);
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .container_naveg .parceiro{
+        display: none;
+    }
+    .container_naveg    
+    {
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 700;
+        padding-top: 200em;
+        padding: 0px;
+        padding-left: 5em;
+       
+    }
+
+    .conteudo button
+    {
+        border-radius: 300rem;
+        border-width: 0.3rem;
+        border-color: rgb(30, 112, 180);
+        margin-top: 2em;
+        padding-right:1.7em;
+        padding-left: 1.7em;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+        
+    } 
+    .conteudo button a 
+    {
+        color: rgba(76, 6, 134, 0.986);
+        font-weight: 200;
+        font-size: 10rem;
+        
+    }  
+    .container_intro .introducao{
+        padding-top: 16em;
+    }
+    .container_intro{
+        
+        padding-top: 1em;
+
+    }
+    .container-menu img.logo{
+        padding-left: 0px;
+        padding: 0px;
+        margin: 0px;
+    }
+    .container_naveg .parceiro{
+        display: none;
+    }
+} 
+}   

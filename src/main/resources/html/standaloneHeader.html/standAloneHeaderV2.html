@@ -1,0 +1,249 @@
+<!-- só pra parar de dar aviso no live server -->
+<head></head>
+<body></body>
+
+
+<script>
+  // Função para preencher os dados de usuário na barra colorida
+  $(function() {
+    var dados = JSON.parse(localStorage.getItem('dados'));
+
+    var username = dados.username;
+    var empresa = dados.empresa;
+    var taxa = dados.taxa;
+
+    console.log(username);
+    console.log(empresa);
+    console.log(taxa);
+
+    document.getElementById('username').innerHTML = `<i class="far fa-user"></i> ${username}`;
+    document.getElementById('empresa').innerHTML = `<i class="fas fa-briefcase"></i> ${empresa}`;
+    document.getElementById('taxa').innerHTML = `<i class="fas fa-percent"></i> ${taxa}`;
+
+})
+  // Funções para abrir e fechar o menu lateral
+  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+  function openNav() {
+      document.getElementById("mySidenav").style.width = "200px";
+    }
+    
+    /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+
+
+<!-- Logo MPSYS com link para home do sistema -->
+<a href="../../html/home/home.html" class="logo navbar-brand">
+  <!-- imagem da logo -->
+  <img src="../../img/logo2.png" alt="logo" class="imagem_logo">
+</a>
+
+<!-- Botão à direita para para abrir navegação lateral -->
+<button onclick="openNav()" class="btn btn-light menu" id="menu" type="button" data-toggle="collapse"
+  data-target=".menu-collapse" aria-expanded="false" aria-controls="menu-collapse">
+  <!-- Ícone 3 linhas: https://fontawesome.com/icons/bars?style=solid -->
+  <i class="fas fa-bars menu_icon"></i>
+</button>
+
+<!-- Barra lateral -->
+<div id="mySidenav" class="sidenav">
+  <!-- Botão fechar barra lateral -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- menu da barra lateral com accordion do bootstrap-->
+  <!-- https://getbootstrap.com/docs/4.5/components/collapse/#accordion-example -->
+  <div class="accordion accordion" id="accordionExample">
+    <!-- botão "produtos" -->
+    <div class="produtos" id="produtos">
+      <h2 class="mb-0">
+        <a class="nav-link text-left" type="button" data-toggle="collapse" data-target="#menu_produtos" aria-expanded="false" aria-controls="menu_produtos">
+          <!-- texto + ícone fontawesome -->
+          <!-- https://fontawesome.com/icons/angle-double-down?style=solid-->
+          Produtos <i class="fas fa-angle-double-down"></i>
+        </a>
+      </h2>
+    </div>
+    <!-- links abaixo de "produtos" para outras áreas do sistema -->
+    <div id="menu_produtos" class="collapse" aria-labelledby="produtos" data-parent="#accordionExample">
+      <div class="card-body">
+        <a href="../../html/inclusao-em-estoque/inclusao.html">Cadastros</a>
+        <a href="../../html/consulta-de-estoque/consulta.html">Consulta</a>
+        <a href="../../html/venda/venda.html">Vendas</a>
+      </div>
+    </div>
+
+    <!-- botão "financeiro" -->
+    <div class="Financeiro" id="Financeiro">
+      <h2 class="mb-0">
+        <a class="nav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_Financeiro" aria-expanded="false" aria-controls="menu_Financeiro">
+          <!-- texto + ícone fontawesome -->
+          <!-- https://fontawesome.com/icons/angle-double-down?style=solid-->
+          Financeiro <i class="fas fa-angle-double-down"></i>
+        </a>
+      </h2>
+    </div>
+    <!-- links abaixo de "financeiro" para outras áreas do sistema -->
+    <div id="menu_Financeiro" class="collapse" aria-labelledby="Financeiro" data-parent="#accordionExample">
+      <div class="card-body">
+        <a class="dropdown-item" href="#">Relatórios</a>
+        <a class="dropdown-item" href="#">Saldo</a>
+
+      </div>
+    </div>
+
+    <!-- botão "externos" -->
+    <div class="externos" id="externos">
+      <h2 class="mb-0">
+        <a class="nav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_externos" aria-expanded="false" aria-controls="menu_externos">
+          <!-- texto + ícone fontawesome -->
+          <!-- https://fontawesome.com/icons/angle-double-down?style=solid-->
+          Externos <i class="fas fa-angle-double-down"></i>
+        </a>
+      </h2>
+    </div>
+    <!-- links abaixo de "externos" para outras áreas do sistema -->
+    <div id="menu_externos" class="collapse" aria-labelledby="externos" data-parent="#accordionExample">
+      <div class="card-body">
+        <a class="dropdown-item" href="#">Transporte</a>
+        <a class="dropdown-item" href="#">Empresas Parceiras</a>
+        <a class="dropdown-item" href="#">SEBRAE</a>
+      </div>
+    </div>
+
+    <!-- botão "serviços" -->
+    <div class="servicos" id="servicos">
+      <h2 class="mb-0">
+        <a class="nav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_servicos" aria-expanded="false" aria-controls="menu_servicos">
+          Serviços
+        </a>
+      </h2>
+    </div>
+    <!-- links abaixo de "serviços" para outras áreas do sistema -->
+    <div id="menu_servicos" class="collapse" aria-labelledby="servicos" data-parent="#accordionExample">
+      <div class="card-body">
+        <a class="dropdown-item" href="#">Indisponível</a>
+      </div>
+    </div>
+
+    <!-- botão "configurações" -->
+    <div class="configuracoes" id="configuracoes">
+      <h2 class="mb-0">
+        <a class="naav-link btn-block text-left" type="button" data-toggle="collapse" data-target="#menu_configuracoes" aria-expanded="false" aria-controls="menu_configuracoes">
+          <!-- https://fontawesome.com/icons/cog?style=solid-->
+          <!-- https://fontawesome.com/icons/angle-double-down?style=solid-->
+          <i class="fas fa-cog"></i> <i class="fas fa-angle-double-down"></i>
+        </a>
+      </h2>
+    </div>
+    <!-- links abaixo de "configurações" para outras áreas do sistema -->
+    <div id="menu_configuracoes" class="collapse" aria-labelledby="configuracoes" data-parent="#accordionExample">
+      <div class="card-body">
+        <a class="dropdown-item" href="../../html/conta/user.html">Conta</a>
+        <a class="dropdown-item" href="#">Opções</a>
+        <a class="dropdown-item" href="../../html/mpsys/mpsys.html">Sair</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Cabeçalho tablet/desktop -->
+<div class="container-flex cabecalho-desktop">
+  <div class="container_menu">
+    <div class="row">
+
+      <!-- A IDEIA POR TRAS DO NAV É POSSIBILITAR O USUÁRIO ACESSAR O QUE PRECISA EM 5 CLIQUE OU MENOS -->
+      <div class="container_naveg">
+        <div class="col-12"> <!-- ocupar todo os espaço em que está localizado -->
+          <ul class="nav justify-content-center"> <!-- lista dos links  do menu -->
+            
+            <!-- dropdown produtos -->
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownProdutos" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Produtos
+              </a>
+              <!-- links dentro de produtos -->
+              <div class="dropdown-menu" aria-labelledby="dropdownProdutos" id="dropdownProdutos">
+                <a class="dropdown-item" href="../../html/inclusao-em-estoque/inclusao.html">Cadastros</a>
+                <a class="dropdown-item" href="../../html/consulta-de-estoque/consulta.html">Consulta</a>
+                <a class="dropdown-item" href="../../html/venda/venda.html">Vendas</a>
+              </div>
+            </li>
+
+            <!-- dropdown financeiro -->
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownFinanceiros"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Financeiro
+              </a>
+              <!-- links dentro de financeiro -->
+              <div class="dropdown-menu" aria-labelledby="dropdownFinanceiros" id="dropdownFinanceiros">
+                <a class="dropdown-item" href="../../html/estatisticas/estatisticas.html">Estatísticas</a>
+                <a class="dropdown-item" href="#">Saldo</a>
+              </div>
+            </li>
+
+            <!-- link "serviços" -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Serviços</a>
+            </li>
+
+            <!-- dropdown "Externos" -->
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownExternos" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Externos
+              </a>
+              <!-- links dentro de "externos" -->
+              <div class="dropdown-menu" aria-labelledby="dropdownExternos">
+                <a class="dropdown-item" href="#">Transporte</a>
+                <a class="dropdown-item" href="#">Empresas Parceiras</a>
+              </div>
+            </li>
+
+            <!-- dropdown "configurações" -->
+            <li class="nav-item">
+              <a href="#" class="nav-link" type="button" id="dropdownConfig" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-cog"></i> <!-- https://fontawesome.com/icons/cog?style=solid-->
+              </a>
+              <!-- links dentro de "configurações" -->
+              <div class="dropdown-menu" aria-labelledby="dropdownConfig">
+                <a class="dropdown-item" href="../conta/user.html">Conta</a>
+                <a class="dropdown-item" href="#">Opções</a>
+                <a class="dropdown-item" href="../../html/mpsys/mpsys.html">Sair</a>
+              </div>
+            </li>
+
+          </ul> <!-- lista de links e dropdowns -->
+
+        </div> <!-- col-12 -->
+      </div> <!-- container_naveg -->
+    </div> <!-- row -->
+  </div> <!-- container_menu -->
+</div> <!-- container-flex cabecalho-desktop -->
+
+
+<!-- barra colorida com dados do utilizador logado -->
+<!-- Dados preenchidos com header.js -->
+<div class="dados lead">
+
+  <div class="usuario" id="username" class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4">
+    <!-- https://fontawesome.com/icons/user?style=regular -->
+    <i class="far fa-user"></i>
+      USUARIO de nome grande
+  </div>
+  <div class="empresa" id="empresa" class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4">
+    <i class="fas fa-briefcase"></i>
+    EMPRESA de nome gigantesco
+  </div>
+  <div class="taxa" id="taxa" class="d-inline-block font-weight-bold m-2 pl-1 pr-3 py-4">
+    <i class="fas fa-percent"></i>
+    TAXA(?)
+  </div>
+</div>
+
+
